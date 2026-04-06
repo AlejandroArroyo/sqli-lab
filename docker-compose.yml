@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  # ─────────────────────────────────────────────
+  # VULNERABLE APP  (puerto 5000)
+  # ─────────────────────────────────────────────
+  vuln-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: sqli_vulnerable
+    environment:
+      - FLASK_ENV=development
+      - APP_MODE=vulnerable
+    ports:
+      - "5000:5000"
+    volumes:
+      - db-data:/app/data
+    networks:
+      - sqli-lab-net
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # SECURE APP  (puerto 5001)
+  # ─────────────────────────────────────────────
+  secure-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: sqli_secure
+    environment:
+      - FLASK_ENV=development
+      - APP_MODE=secure
+    ports:
+      - "5001:5000"
+    volumes:
+      - db-data-secure:/app/data
+    networks:
+      - sqli-lab-net
+    restart: unless-stopped
+
+networks:
+  sqli-lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16   # red aislada, sin acceso externo
+
+volumes:
+  db-data:
+  db-data-secure:
