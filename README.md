@@ -110,4 +110,4 @@ docker compose down -v   # -v elimina los volúmenes con las BBDDs
 
 ## 📄 Licencia
 
-MIT — ver [LICENSE](LICENSE). Uso libre para fines educativos con atribución.
+MIT — Uso libre para fines educativos con atribución.
