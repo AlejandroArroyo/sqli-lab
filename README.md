@@ -105,9 +105,3 @@ docker compose down -v   # -v elimina los volúmenes con las BBDDs
 - **Base de Datos**: SQLite 3 (embebida, sin servidor)
 - **Contenedores**: Docker + Docker Compose
 - **Red**: Bridge network aislada `172.28.0.0/16`
-
----
-
-## 📄 Licencia
-
-MIT — Uso libre para fines educativos con atribución.
