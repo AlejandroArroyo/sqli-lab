@@ -1,6 +1,6 @@
 # 🔐 SQLi Lab — Laboratorio de SQL Injection (Entorno Educativo)
 
-> **Portfolio · DevSecOps · Seguridad Ofensiva & Defensiva**
+> **DevSecOps · Seguridad Ofensiva & Defensiva**
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0-lightgrey?logo=flask)](https://flask.palletsprojects.com)
